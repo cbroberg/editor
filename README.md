@@ -10,4 +10,8 @@ This project was bootstrapped with create-react-app ...
 
 (https://draftjs.org)
 
-This is added now ... 
+## Check out
+
+https://github.com/bkniffler/draft-wysiwyg
+https://github.com/jpuri/react-draft-wysiwyg
+
