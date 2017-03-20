@@ -1,16 +1,14 @@
 import React from 'react'
 import {Editor, EditorState, RichUtils} from 'draft-js'
 import './DraftJS.css'
-
+import StyledButton from './StyledComps/Button'
 // Custom overrides for "code" style.
-const styleMap = {
-CODE: {
-    backgroundColor: 'rgba(0, 0, 0, 0.05)',
-    fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
-    fontSize: 16,
-    padding: 2,
-},
-};
+//We won't use this for the time being
+// const styleMap = {
+// CODE: {
+   
+// },
+// };
 
 class MyEditor extends React.Component {
 
@@ -85,13 +83,13 @@ render() {
         />
         <div className={className} onClick={this.focus}>
         <Editor
-            blockStyleFn={getBlockStyle}
-            customStyleMap={styleMap}
+
+
             editorState={editorState}
             handleKeyCommand={this.handleKeyCommand}
             onChange={this.onChange}
             onTab={this.onTab}
-            placeholder="This is a story about a man who wanted to learn to develop code again. He started off with learning ReactJS which is just awesome :)"
+            placeholder="Anderi was here"
             ref="editor"
             spellCheck={true}
         />
@@ -101,12 +99,13 @@ render() {
 }
 }
 
-function getBlockStyle(block) {
-switch (block.getType()) {
-    case 'blockquote': return 'RichEditor-blockquote';
-    default: return null;
-}
-}
+//Neither this
+// function getBlockStyle(block) {
+// switch (block.getType()) {
+//     case 'blockquote': return 'RichEditor-blockquote';
+//     default: return null;
+// }
+// }
 
 class StyleButton extends React.Component {
 constructor() {
@@ -118,15 +117,15 @@ constructor() {
 }
 
 render() {
-    let className = 'RichEditor-styleButton';
-    if (this.props.active) {
-    className += ' RichEditor-activeButton';
-    }
+    // let className = 'RichEditor-styleButton';
+    // if (this.props.active) {
+    // className += ' RichEditor-activeButton';
+    // }
 
     return (
-    <span className={className} onMouseDown={this.onToggle}>
+    <StyledButton onMouseDown={this.onToggle}>
         {this.props.label}
-    </span>
+    </StyledButton>
     );
 }
 }
@@ -179,13 +178,13 @@ var currentStyle = props.editorState.getCurrentInlineStyle();
 return (
     <div className="RichEditor-controls">
     {INLINE_STYLES.map(type =>
-        <StyleButton
+           <StyleButton
         key={type.label}
         active={currentStyle.has(type.style)}
         label={type.label}
         onToggle={props.onToggle}
         style={type.style}
-        />
+/>
     )}
     </div>
 );
