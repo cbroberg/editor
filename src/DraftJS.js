@@ -2,11 +2,13 @@ import React from 'react'
 import {Editor, EditorState, RichUtils} from 'draft-js'
 import './DraftJS.css'
 import StyledButton from './StyledComps/Button'
+import DivRoot from './StyledComps/Div'
+import styled, { ThemeProvider } from 'styled-components'
 // Custom overrides for "code" style.
 //We won't use this for the time being
 // const styleMap = {
 // CODE: {
-   
+//    background: '#000000'
 // },
 // };
 
@@ -60,7 +62,10 @@ _toggleInlineStyle(inlineStyle) {
 
 render() {
     const {editorState} = this.state;
-
+const greenTheme = {
+  main: 'mediumseagreen',
+  background: '#25b89a'
+};
     // If the user changes block type before entering any text, we can
     // either style the placeholder or hide it. Let's just hide it now.
     let className = 'RichEditor-editor';
@@ -72,7 +77,8 @@ render() {
     }
 
     return (
-    <div className="RichEditor-root">
+          <ThemeProvider theme={greenTheme}>
+    <DivRoot>
         <BlockStyleControls
         editorState={editorState}
         onToggle={this.toggleBlockType}
@@ -92,9 +98,11 @@ render() {
             placeholder="Anderi was here"
             ref="editor"
             spellCheck={true}
+            
         />
         </div>
-    </div>
+    </DivRoot>
+    </ThemeProvider>
     );
 }
 }
