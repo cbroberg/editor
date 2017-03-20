@@ -16,3 +16,30 @@ https://github.com/bkniffler/draft-wysiwyg
 
 https://github.com/jpuri/react-draft-wysiwyg
 
+### Get stuff
+```
+git clone https://github.com/cbroberg/editor.git
+...
+cd editor
+```
+
+### npm install stuff
+```
+npm install
+or
+sudo npm install 
+```
+
+### yarn install stuff
+```
+yarn install
+or
+sudo yarn install 
+```
+
+### Run stuff
+```
+npm start
+or
+yarnpkg start 
+```
