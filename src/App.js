@@ -13,14 +13,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/*<TinyMCE
+        <TinyMCE
           content="<p>This is a story about a man who wanted to learn to develop code again. He started off with learning ReactJS which is just awesome :)</p>"
           config={{
             plugins: 'link image code',
             toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
           }}
           onChange={this.handleEditorChange}
-        />*/}
+        />
         <MyEditor />
       </div>
     )
